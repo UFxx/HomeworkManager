@@ -35,31 +35,86 @@
             <ul>
                 <li><a href="">Задания</a></li>
                 <li><a href="registration.html">Регистрация</a></li>
-                <li><a href="">Войти</a></li>
+                <li><a href="index.html">Войти</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="content">
-        <div class="student-info">
-            <div class="student-photo">
-                <div>
-                    <img src="assets/img/student-default-photo.png" alt="">
+        <div class="top-content">
+            <div class="student-info">
+                <div class="student-photo">
+                    <div>
+                        <img src="assets/img/student-default-photo.png" alt="">
+                    </div>
+                    <input type="file" name="" id="change-photo">
+                    <label for="change-photo">Изменить</label>
                 </div>
-                <input type="file" name="" id="change-photo">
-                <label for="change-photo">Изменить</label>
+                <div class="student-characteristics">
+                    <p class="characteristics-item student-name">Хадиков Георгий Сосланович</p>
+                    <p class="characteristics-item student-birthday-date">28.03.2004</p>
+                    <div>
+                        <p class="characteristics-item student-group">3-ИС</p>
+                    </div>
+                </div>
             </div>
-            <div class="student-characteristics">
-                <p class="characteristics-item student-name">Хадиков Георгий Сосланович</p>
-                <p class="characteristics-item student-birthday-date">28.03.2004</p>
-                <div>
-                    <p class="characteristics-item student-group">3-ИС</p>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="last-weeks-tasks">
+                <p class="last-weeks-tasks-title">Последние задания</p>
+                <div class="last-weeks-tasks-content">
+                    <a href="" class="last-weeks-tasks-item">
+                        <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>
+                        <div>
+                            <p class="last-weeks-tasks-item__subject">ПМ 01</p>
+                            <p class="last-weeks-tasks-item__status task-done">Сдано</p>
+                        </div>
+                    </a>
+                    <a href="" class="last-weeks-tasks-item">
+                        <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>
+                        <div>
+                            <p class="last-weeks-tasks-item__subject">ПМ 01</p>
+                            <p class="last-weeks-tasks-item__status task-failed">Просрочено</p>
+                        </div>
+                    </a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                    <a href="" class="last-weeks-tasks-item"></a>
                 </div>
             </div>
         </div>
+        <div class="failed-tasks">
+            <p class="failed-tasks-title">Просроченные задания</p>
+            <i class="fas fa-chevron-left"></i>
+            <div class="failed-tasks-slider-line">
+                <div href="" class="failed-tasks-item">
+                    <div>
+                        <p>Гагиева В.Л.</p>
+                        <p>ПМ 01</p>
+                    </div>
+                    <!-- Дата, когда задание выложили -->
+                    <p class="task-data">28.12.2023</p>
+                    <p class="task-failed">Просрочено</p>
+                    <a href="">Посмотреть</a>
+                </div>
+                <div href="" class="failed-tasks-item">
+                    <div>
+                        <p>Гагиева В.Л.</p>
+                        <p>МДК 04.01</p>
+                    </div>
+                    <!-- Дата, когда задание выложили -->
+                    <p class="task-data">28.12.2023</p>
+                    <p class="task-failed">Просрочено</p>
+                    <a href="">Посмотреть</a>
+                </div>
+                <div href="" class="failed-tasks-item"></div>
+                <div href="" class="failed-tasks-item"></div>
+                <div href="" class="failed-tasks-item"></div>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
     </div>
 
+    <script src="assets/js/profile/failedTasksSlider.js"></script>
 </body>
 
 </html>
