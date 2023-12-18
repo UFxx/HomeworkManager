@@ -1,9 +1,9 @@
-body {
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 20px);
     background-color: #003425;
+    height: calc(100vh - 57.6px);
 }
 
 form {
