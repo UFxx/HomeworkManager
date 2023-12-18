@@ -10,21 +10,14 @@ class LoginForm(AuthenticationForm):
 
 
 class UserRegistrationForm(UserCreationForm):
-    first_name = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите имя'}))
-    last_name = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите фамилию'}))
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите имя пользователя'}))
-    group = forms.TextInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите группу'})
-    email = forms.EmailField(
-        widget=forms.EmailInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите адрес эл. почты'}))
-    phone = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите номер телефона'}))
-    password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите пароль'}))
-    password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control py-4', 'placeholder': 'Подтвердите пароль'}))
+    first_name = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Введите имя', 'id': "firstname-input"}))
+    last_name = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Введите фамилию', 'id': "lastname-input"}))
+    username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Введите имя пользователя', 'id': "username-input"}))
+    group = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Введите группу', 'id': "group-input"}))
+    email = forms.EmailField(label="", widget=forms.EmailInput(attrs={'placeholder': 'Введите адрес эл. почты', 'id': "email-input"}))
+    phone = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Введите номер телефона', 'id': "tel-input"}))
+    password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Введите пароль', 'id': "registration-password"}))
+    password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Подтвердите пароль', 'id': "repeat-registration-password"}))
 
 
 class QuestForm(forms.ModelForm):

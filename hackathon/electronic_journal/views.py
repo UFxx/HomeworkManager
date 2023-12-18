@@ -3,7 +3,8 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 
 from .forms import LoginForm, UserRegistrationForm
-from .models import User, Quest, UserQuest
+from .models import Quest, UserQuest
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -21,6 +22,7 @@ class UserRegistrationView(CreateView):
     model = User
     form_class = UserRegistrationForm
     template_name = 'electronic_journal/registration.html'
+    success_url = reverse_lazy('login')
 
 
 class Profile(ListView):
