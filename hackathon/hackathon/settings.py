@@ -41,12 +41,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'sortedm2m',
     "debug_toolbar",
+    'sortedm2m',
+
     'electronic_journal.apps.ElectronicJournalConfig',
 
 
+]
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
 ]
 
 MIDDLEWARE = [
