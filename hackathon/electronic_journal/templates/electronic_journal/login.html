@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<body>
+    <link rel="stylesheet" href="{% static 'electronic_journal/css/index/style.css' %}">
     <form action="" method="post">
 
         <div class="login-title-container">
@@ -21,11 +21,10 @@
             <button>Войти</button>
             <div class="login-links">
                 <a href="">Сбросить пароль</a>
-                <a href="registration.html">Регистрация</a>
+                <a href="{% url 'signup' %}">Регистрация</a>
             </div>
         </div>
     </form>
 
     <script src="{% static 'electronic_journal/js/main.js' %}"></script>
-</body>
 {% endblock %}

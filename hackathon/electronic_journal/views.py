@@ -20,10 +20,7 @@ class UserRegistrationView(CreateView):
     """Регистрация"""
     model = User
     form_class = UserRegistrationForm
-    template_name = 'signup.html'
-    success_url = reverse_lazy('login')
-    success_message = 'Вы успешно зарегистрированы'
-    title = 'Store - Регистрация'
+    template_name = 'electronic_journal/registration.html'
 
 
 class Profile(ListView):

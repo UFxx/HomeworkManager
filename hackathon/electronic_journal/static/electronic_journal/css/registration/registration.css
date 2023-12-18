@@ -11,7 +11,7 @@ form {
     flex-direction: column;
     align-items: center;
     width: 600px;
-    height: 400px;
+    height: 450px;
     border-radius: 30px;
     padding: 0 0 40px 0;
     background: rgba(170, 170, 170, 0.10);
@@ -27,16 +27,48 @@ form input {
     color: black;
 }
 
-#login-input {
-    transition: .3s ease background-color, .5s ease transform;
+.form-content {
+    margin-top: 20px;
 }
 
-#login-password {
-    transition: .3s ease background-color, .7s ease transform;
-}
-
-form input, form button {
+.form-content > div input, .form-content button {
     transform: scale(0.001);
+}
+
+#firstname-input {
+    transition: .3s ease transform;
+}
+
+#lastname-input {
+    transition: .4s ease transform;
+}
+
+#email-input {
+    transition: .5s ease transform;
+}
+
+#username-input {
+    transition: .6s ease transform;
+}
+
+#registration-password {
+    transition: .7s ease transform;
+}
+
+#repeat-registration-password {
+    transition: .8s ease transform;
+}
+
+#tel-input {
+    transition: .9s ease transform;
+}
+
+#group-input {
+    transition: 1s ease transform;
+}
+
+#register-button {
+    transition: 1.2s ease transform;
 }
 
 form input:hover {
@@ -49,6 +81,11 @@ form input::placeholder {
 
 form input:focus::placeholder {
     transform: translateY(-200%);
+}
+
+.form-content>div {
+    display: flex;
+    column-gap: 30px;
 }
 
 .login-title {
@@ -100,7 +137,7 @@ form button {
     font-size: 16px;
     cursor: pointer;
 
-    transition: .3s ease background-color, 1s ease transform;
+    transition: 1.2s ease transform;
 }
 
 form button:hover {
@@ -112,12 +149,4 @@ form button:hover {
     column-gap: 20px;
     justify-content: center;
     align-items: center;
-}
-
-.login-links a:first-child {
-    transition: 1.3s ease transform;
-}
-
-.login-links a:last-child {
-    transition: 1.6s ease transform;
 }

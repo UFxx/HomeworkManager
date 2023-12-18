@@ -1,20 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-a {
-    color: white;
-    text-decoration-line: underline;
-}
-
-body {
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 20px);
     background-color: #003425;
+    height: calc(100vh - 57.6px);
 }
 
 form {
@@ -50,8 +39,16 @@ form input {
     transition: .3s ease background-color, .7s ease transform;
 }
 
-form input, form button {
+.form-content {
+    margin-top: 20px;
+}
+
+.form-content > div input, form button {
     transform: scale(0.001);
+}
+
+#firstname-input, #lastname-input, #email-input, #username-input, #registration-password, #repeat-registration-password, #tel-input, #group-input {
+    transition: .3s ease background-color;
 }
 
 form input:hover {
@@ -66,10 +63,9 @@ form input:focus::placeholder {
     transform: translateY(-200%);
 }
 
-.form-content div:nth-child(2) {
+.form-content > div {
     display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+    column-gap: 30px;
 }
 
 .login-title {
@@ -121,7 +117,7 @@ form button {
     font-size: 16px;
     cursor: pointer;
 
-    transition: .3s ease background-color, 1s ease transform;
+    transition: .3s ease background-color, 1.2s ease transform;
 }
 
 form button:hover {
@@ -133,12 +129,4 @@ form button:hover {
     column-gap: 20px;
     justify-content: center;
     align-items: center;
-}
-
-.login-links a:first-child {
-    transition: 1.3s ease transform;
-}
-
-.login-links a:last-child {
-    transition: 1.6s ease transform;
 }
