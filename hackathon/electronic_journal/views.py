@@ -33,6 +33,7 @@ class Profile(ListView):
     def get_queryset(self):
         # было
         # return User.objects.get(slug=self.request.user)
+        # стало
         #                                               ||
         #                                               ||
         #                                               \/
