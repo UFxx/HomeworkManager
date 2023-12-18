@@ -31,7 +31,7 @@ JAZZMIN_SETTINGS = {
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string
-    "search_model": ["shop.Users"],
+    # "search_model": ["shop.Users"],
 
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
     "user_avatar": None,
@@ -51,7 +51,7 @@ JAZZMIN_SETTINGS = {
         {"name": "Доп функции", "url": "additional_admin_features", "new_window": True},
         {"name": 'Flower' , "url": 'http://127.0.0.1:5555/',"new_window": True },
         # model admin to link to (Permissions checked against model)
-        {"model": "shop.Users"},
+        {"model": "electronic_journal.Users"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
         {"app": "shop"},
@@ -64,7 +64,7 @@ JAZZMIN_SETTINGS = {
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
         {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"model": "shop.Users"},
+        {"model": "electronic_journal.Users"},
         {"name": "Additional_functions", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True}
     ],
 
@@ -103,7 +103,7 @@ JAZZMIN_SETTINGS = {
     # list of 5.13.0 free icon classes
     "icons": {
         "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
+        "electronic_journal.user": "fas fa-user",
         "auth.Group": "fas fa-users",
     },
     # Icons that are used when one is not manually specified
@@ -138,7 +138,7 @@ JAZZMIN_SETTINGS = {
     # - carousel
     "changeform_format": "horizontal_tabs",
     # override change forms on a per modeladmin basis
-    "changeform_format_overrides": {"shop.Users": "collapsible", "auth.group": "vertical_tabs"},
+    "changeform_format_overrides": {"electronic_journal.Users": "collapsible", "auth.group": "vertical_tabs"},
     # # Add a language dropdown into the admin
     # "language_chooser": True,
 }

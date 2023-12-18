@@ -1,10 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 
 from .forms import LoginForm, UserRegistrationForm
-from .models import Quest, UserQuest
-from django.contrib.auth.models import User
+from .models import Quest, UserQuest, User
 
 
 # Create your views here.
@@ -18,12 +18,14 @@ class Login(LoginView):
 
 
 class UserRegistrationView(CreateView):
+
     """Регистрация"""
-    model = User
+    model = get_user_model()
     form_class = UserRegistrationForm
     template_name = 'electronic_journal/registration.html'
-    success_url = reverse_lazy('login')
 
+    def get_success_url(self):
+        return reverse_lazy('login')
 
 class Profile(ListView):
     models = User

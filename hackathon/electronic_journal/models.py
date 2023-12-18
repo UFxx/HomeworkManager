@@ -78,7 +78,7 @@ class UserQuest(models.Model):
     comment = models.TextField(verbose_name='Комментарий', blank=True, null=True)
     file_link = models.FileField(upload_to='user_quest/%Y/%m/%d/', blank=True, null=True)
     date_added = models.DateField(auto_now_add=True, blank=True)
-    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='URL', blank=True, null=True)
+    slug = models.SlugField(max_length=110, unique=True, db_index=True, verbose_name='URL', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Готовая работа'
