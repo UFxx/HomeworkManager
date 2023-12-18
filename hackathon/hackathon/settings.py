@@ -136,5 +136,3 @@ JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 AUTH_USER_MODEL = 'electronic_journal.User'
 
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'

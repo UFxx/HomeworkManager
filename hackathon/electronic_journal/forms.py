@@ -5,5 +5,5 @@ from .models import *
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(label="Логин", widget=forms.TextInput(attrs={'placeholder': "Введите имя"}))
-    password = forms.CharField(label="Пароль", widget=forms.PasswordInput(attrs={'placeholder': "Введите пароль"}))
+    username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': "Логин", 'id': "login-input"}))
+    password = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': "Пароль", 'id': "login-password"}))
