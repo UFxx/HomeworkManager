@@ -1,0 +1,123 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 20px);
+    background-color: #003425;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    border-radius: 30px;
+    padding: 0 0 40px 0;
+    background: rgba(170, 170, 170, 0.10);
+    box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.50);
+}
+
+form input {
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    color: black;
+}
+
+#login-input {
+    transition: .3s ease background-color, .5s ease transform;
+}
+
+#login-password {
+    transition: .3s ease background-color, .7s ease transform;
+}
+
+form input, form button {
+    transform: scale(0.001);
+}
+
+form input:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+form input::placeholder {
+    transition: .3s ease transform;
+}
+
+form input:focus::placeholder {
+    transform: translateY(-200%);
+}
+
+.login-title {
+    font-size: 46px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    height: 100%;
+}
+
+.login-title-container {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+
+.login-title-line {
+    position: absolute;
+    height: 2px;
+    width: 95%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+
+form button {
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 15px;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #D9D9D9;
+    color: #0C654C;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: .3s ease background-color, 1s ease transform;
+}
+
+form button:hover {
+    background-color: #d9d9d982;
+}
+
+.login-links {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-links a:first-child {
+    transition: 1.3s ease transform;
+}
+
+.login-links a:last-child {
+    transition: 1.6s ease transform;
+}
