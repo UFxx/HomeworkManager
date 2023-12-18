@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration-line: underline;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -11,7 +22,7 @@ form {
     flex-direction: column;
     align-items: center;
     width: 600px;
-    height: 400px;
+    height: 450px;
     border-radius: 30px;
     padding: 0 0 40px 0;
     background: rgba(170, 170, 170, 0.10);
@@ -27,11 +38,15 @@ form input {
     color: black;
 }
 
-#login-input {
+#registration-input {
     transition: .3s ease background-color, .5s ease transform;
 }
 
-#login-password {
+#registration-password {
+    transition: .3s ease background-color, .7s ease transform;
+}
+
+#repeat-registration-password {
     transition: .3s ease background-color, .7s ease transform;
 }
 
@@ -49,6 +64,12 @@ form input::placeholder {
 
 form input:focus::placeholder {
     transform: translateY(-200%);
+}
+
+.form-content div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .login-title {
