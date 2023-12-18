@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/index/style.css">
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/profile/profile.css">
 
-    <!-- Ubuntu Font | Regular 400 / Medium 500  / Bold 700  -->
+    <!-- Ubuntu Font | Regular 400 / Medium 500  /Bold 700  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8a2fbc0c4d.js" crossorigin="anonymous"></script>
 
-    <title>Логин</title>
+    <title>Главная</title>
 </head>
 
 <body>
@@ -41,28 +41,25 @@
     </header>
 
     <div class="content">
-        <form action="">
-            <div class="login-title-container">
-                <p class="login-title">Авторизация</p>
-                <div class="login-title-line"></div>
+        <div class="student-info">
+            <div class="student-photo">
+                <div>
+                    <img src="assets/img/student-default-photo.png" alt="">
+                </div>
+                <input type="file" name="" id="change-photo">
+                <label for="change-photo">Изменить</label>
             </div>
-            <div class="form-content">
+            <div class="student-characteristics">
+                <p class="characteristics-item student-name">Хадиков Георгий Сосланович</p>
+                <p class="characteristics-item student-birthday-date">28.03.2004</p>
                 <div>
-                    <input type="email" name="" id="login-input" placeholder="Логин">
-                </div>
-                <div>
-                    <input type="password" name="" id="login-password" placeholder="Пароль">
-                </div>
-                <button>Войти</button>
-                <div class="login-links">
-                    <a href="">Сбросить пароль</a>
-                    <a href="registration.html">Регистрация</a>
+                    <p class="characteristics-item student-group">3-ИС</p>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 
-    <script src="assets/js/index/main.js"></script>
 </body>
 
 </html>
