@@ -33,7 +33,7 @@
         </a>
         <nav>
             <ul>
-                <li><a href="">Задания</a></li>
+                <li><a href="tasks.html">Задания</a></li>
                 <li><a href="registration.html">Регистрация</a></li>
                 <li><a href="index.html">Войти</a></li>
             </ul>
@@ -91,7 +91,6 @@
                         <p>Гагиева В.Л.</p>
                         <p>ПМ 01</p>
                     </div>
-                    <!-- Дата, когда задание выложили -->
                     <p class="task-data">28.12.2023</p>
                     <p class="task-failed">Просрочено</p>
                     <a href="">Посмотреть</a>
@@ -101,7 +100,6 @@
                         <p>Гагиева В.Л.</p>
                         <p>МДК 04.01</p>
                     </div>
-                    <!-- Дата, когда задание выложили -->
                     <p class="task-data">28.12.2023</p>
                     <p class="task-failed">Просрочено</p>
                     <a href="">Посмотреть</a>
@@ -111,6 +109,19 @@
                 <div href="" class="failed-tasks-item"></div>
             </div>
             <i class="fas fa-chevron-right"></i>
+        </div>
+        <!-- Форма для препода, когда он задания загружает -->
+        <div class="upload-task">
+            <textarea name="" id="" cols="30" rows="5" placeholder="Описание задания"></textarea>
+            <input type="file" name="" id="upload-task-input">
+            <label for="upload-task-input">Загрузить файл</label>
+            <select name="" id="">
+                <option value="">Группа</option>
+                <option value="">3-ИС</option>
+                <option value="">4-1-ИС</option>
+                <option value="">4-2-ИС</option>
+            </select>
+            <button>Отправить</button>
         </div>
     </div>
 

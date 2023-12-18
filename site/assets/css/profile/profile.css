@@ -62,7 +62,7 @@ body {
     opacity: 0;
 }
 
-#change-photo + label{
+#change-photo+label {
     border: none;
     padding: 10px 15px;
     background-color: #AAAAAA1A;
@@ -78,7 +78,7 @@ body {
     margin-left: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .characteristics-item {
@@ -205,7 +205,7 @@ body {
     background-color: #0C654C;
     cursor: pointer;
     z-index: 2;
-}   
+}
 
 .fa-chevron-right {
     right: 50px;
@@ -235,7 +235,8 @@ body {
     color: white;
 }
 
-.failed-tasks-item .task-data, .failed-tasks-item .task-failed {
+.failed-tasks-item .task-data,
+.failed-tasks-item .task-failed {
     text-align: center;
     margin-top: 15px;
     font-size: 20px;
@@ -253,4 +254,82 @@ body {
     font-size: 18px;
     border: none;
     color: white;
+}
+
+.upload-task {
+    position: relative;
+    width: 400px;
+    height: 140px;
+    background-color: #AAAAAA26;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 30px 20px;
+
+    transition: .3s ease background-color;
+}
+
+.upload-task:hover {
+    background-color: #006e51;
+}
+
+.upload-task textarea::placeholder {
+    color: white;
+}
+
+.upload-task textarea {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: #AAAAAA1A;
+    color: white;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
+
+#upload-task-input {
+    opacity: 0;
+    z-index: -1;
+}
+
+#upload-task-input+label {
+    position: absolute;
+    left: 30px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #aaaaaa37;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+select {
+    position: absolute;
+    top: 30px;
+    left: 300px;
+    padding: 5px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    color: white;
+    background: rgba(170, 170, 170, 0.236);
+    border: none;
+    outline: none;
+}
+
+option {
+    background-color: #8DA383;
+}
+
+.upload-task button {
+    position: absolute;
+    left: 300px;
+    top: 135px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(170, 170, 170, 0.10);
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
 }
