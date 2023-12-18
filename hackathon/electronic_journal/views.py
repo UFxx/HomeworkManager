@@ -3,5 +3,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def index(request, ):
-    return HttpResponse()
+def index(request):
+    return render(request, 'electronic_journal/index.html')
