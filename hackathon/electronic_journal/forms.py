@@ -25,3 +25,12 @@ class UserRegistrationForm(UserCreationForm):
         widget=forms.PasswordInput(attrs={'class': 'form-control py-4', 'placeholder': 'Введите пароль'}))
     password2 = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control py-4', 'placeholder': 'Подтвердите пароль'}))
+
+
+class QuestForm(forms.ModelForm):
+    class Meta:
+        model = Quest
+        fields = ['quest_name', 'subject', 'teacher', 'group', 'description', 'file_link', 'date_pass']
+
+    def __init__(self, *args, **kwargs):
+        super(QuestForm, self).__init__(*args, **kwargs)
