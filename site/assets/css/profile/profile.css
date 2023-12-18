@@ -11,6 +11,11 @@ body {
     padding: 30px 50px;
 }
 
+.top-content {
+    display: flex;
+    justify-content: space-between;
+}
+
 .student-info {
     width: 500px;
     height: 220px;
@@ -19,13 +24,20 @@ body {
     display: flex;
     justify-content: center;
     padding: 15px 0;
+
+    transition: .3s ease background-color, .3s ease box-shadow;
+}
+
+.student-info:hover {
+    background-color: #006e51;
+    box-shadow: 0px 4px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 .student-photo {
     background-color: #AAAAAA1A;
-    padding: 20px;
+    padding: 15px;
     width: 125px;
-    height: 180px;
+    height: 190px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,8 +92,165 @@ body {
 
 .student-characteristics div {
     display: flex;
+    align-items: center;
 }
 
 .student-characteristics div p {
-    flex-basis: 60%;
+    flex-basis: 90%;
+}
+
+.student-characteristics div i {
+    flex-basis: 5%;
+    color: white;
+    padding: 11px 20px;
+    margin-top: 5px;
+    background-color: #AAAAAA1A;
+    border-radius: 15px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.last-weeks-tasks {
+    position: relative;
+}
+
+.last-weeks-tasks-content {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 15px;
+    width: 430px;
+    margin-top: 30px;
+}
+
+.last-weeks-tasks-item {
+    width: 200px;
+    height: 60px;
+    background-color: #AAAAAA1A;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    transition: .3s ease background-color, .3s ease box-shadow;
+}
+
+.last-weeks-tasks-item:hover {
+    background-color: #006e51;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.last-weeks-tasks-item div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-done {
+    color: #00DA23;
+}
+
+.task-failed {
+    color: #FF3C3C;
+}
+
+.last-weeks-tasks-title {
+    position: absolute;
+    color: white;
+    left: 40%;
+    transform: translateX(-25%);
+    font-size: 20px;
+}
+
+.failed-tasks {
+    margin-top: 60px;
+}
+
+.failed-tasks-title {
+    font-size: 20px;
+    color: white;
+}
+
+.failed-tasks {
+    overflow: hidden;
+    height: 310px;
+}
+
+.failed-tasks-item {
+    width: 300px;
+    height: 200px;
+    background: rgba(189, 236, 182, 0.30);
+    border-radius: 20px;
+    flex-shrink: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.failed-tasks-slider-line {
+    position: relative;
+    display: flex;
+    column-gap: 30px;
+    margin-top: 10px;
+    left: 0;
+
+    transition: .3s ease left;
+}
+
+.failed-tasks i {
+    position: absolute;
+    color: white;
+    padding: 10px 14px;
+    font-size: 20px;
+    border-radius: 100%;
+    background-color: #0C654C;
+    cursor: pointer;
+    z-index: 2;
+}   
+
+.fa-chevron-right {
+    right: 50px;
+    top: 510px;
+}
+
+.fa-chevron-left {
+    top: 510px;
+}
+
+.failed-tasks-item div {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+}
+
+.failed-tasks-item {
+    transition: .3s ease transform;
+}
+
+.failed-tasks-item:hover {
+    transform: scale(1.03);
+}
+
+.failed-tasks-item .task-data {
+    color: white;
+}
+
+.failed-tasks-item .task-data, .failed-tasks-item .task-failed {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.failed-tasks-item a {
+    display: block;
+    text-align: center;
+    width: calc(100% - 20px);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 17px;
+    background: rgba(12, 101, 76, 0.42);
+    outline: none;
+    font-size: 18px;
+    border: none;
+    color: white;
 }
