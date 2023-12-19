@@ -11,7 +11,7 @@ class Login(LoginView):
     template_name = 'electronic_journal/login.html'
 
     def get_success_url(self):
-        return reverse_lazy('login')  # указать профиль
+        return reverse_lazy('profile')  # указать профиль
 
 
 class UserRegistrationView(CreateView):
