@@ -6,9 +6,6 @@ from django.views.generic import CreateView, ListView
 from .forms import LoginForm, UserRegistrationForm
 from .models import Quest, UserQuest, User
 
-
-# Create your views here.
-
 class Login(LoginView):
     form_class = LoginForm
     template_name = 'electronic_journal/login.html'
@@ -32,12 +29,6 @@ class Profile(ListView):
     template_name = 'electronic_journal/profile.html'
 
     def get_queryset(self):
-        # было
-        # return User.objects.get(slug=self.request.user)
-        # стало
-        #                                               ||
-        #                                               ||
-        #                                               \/
         return User.objects.get(slug=self.request.user.slug)
 
     def get_context_data(self, object_list=None, *args, **kwargs):
@@ -45,7 +36,6 @@ class Profile(ListView):
 
         context['user_data'] = self.get_queryset()
         context['quest'] = Quest.objects.filter(group=self.request.user.group)
-        # здесь пропустил букву                \/
         context['userquest'] = UserQuest.objects.filter(user=self.request.user)
         return context
 
