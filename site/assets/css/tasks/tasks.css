@@ -31,7 +31,7 @@ main {
 }
 
 .task-close {
-    height: 120px;
+    height: 180px;
     overflow: hidden;
 }
 
@@ -39,7 +39,7 @@ main {
     background-color: #8AAD84;
 }
 
-.teacher-name, .subject, .task-date {
+.teacher-name, .subject, .task-date, .task-name {
     margin-top: 15px;
     padding: 5px 20px;
     background-color: rgba(12, 101, 76, 0.50);
@@ -55,7 +55,7 @@ main {
 .expand {
     position: absolute;
     left: 80%;
-    top: 80px;
+    top: 110px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -78,7 +78,7 @@ main {
 .task-description p {
     padding: 10px;
     background: rgba(12, 101, 76, 0.42);
-    margin-top: 20px;
+    margin-top: 30px;
     height: 150px;
     width: 300px;
     text-align: left;
