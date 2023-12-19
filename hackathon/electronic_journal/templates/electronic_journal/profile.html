@@ -22,26 +22,31 @@
         </div>
         <div class="last-weeks-tasks">
             <p class="last-weeks-tasks-title">Последние задания</p>
-            <div class="last-weeks-tasks-content">
-                <a href="" class="last-weeks-tasks-item">
-                    <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>
-                    <div>
-                        <p class="last-weeks-tasks-item__subject">ПМ 01</p>
-                        <p class="last-weeks-tasks-item__status task-done">Сдано</p>
-                    </div>
-                </a>
-                <a href="" class="last-weeks-tasks-item">
-                    <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>
-                    <div>
-                        <p class="last-weeks-tasks-item__subject">ПМ 01</p>
-                        <p class="last-weeks-tasks-item__status task-failed">Просрочено</p>
-                    </div>
-                </a>
-                <a href="" class="last-weeks-tasks-item"></a>
-                <a href="" class="last-weeks-tasks-item"></a>
-                <a href="" class="last-weeks-tasks-item"></a>
-                <a href="" class="last-weeks-tasks-item"></a>
-            </div>
+
+                <div class="last-weeks-tasks-content">
+                    {% for userquest in userquests %}
+                    <a href="" class="last-weeks-tasks-item">
+                        <p class="last-weeks-tasks-item__teacher">{{ userquest.status} }</p>
+                        <div>
+                            <p class="last-weeks-tasks-item__subject">{{ quest.subject }}</p>
+                            <p class="last-weeks-tasks-item__status task-done">Сдано</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    <a href="" class="last-weeks-tasks-item">
+                        <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>
+                        <div>
+                            <p class="last-weeks-tasks-item__subject">ПМ 01</p>
+                            <p class="last-weeks-tasks-item__status task-failed">Просрочено</p>
+                        </div>
+                    </a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                    <a href="" class="last-weeks-tasks-item"></a>
+                </div>
+
+
         </div>
     </div>
     <div class="failed-tasks">
