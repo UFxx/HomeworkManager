@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
 from .models import *
+from .tasks import send_email_verification
 
 
 class LoginForm(AuthenticationForm):
@@ -31,6 +32,11 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = ['username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'phone']
+
+    def save(self, commit=True):
+        user = super(UserRegistrationForm, self).save(commit=True)
+        send_email_verification.delay(user.id)
+        return user
 
 
 class QuestForm(forms.ModelForm):
