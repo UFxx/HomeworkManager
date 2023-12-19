@@ -14,7 +14,9 @@ body {
 .lower_select{
     top: 70px;
 }
-
+.max_lower_select{
+    top: 110px;
+}
 .top-content {
     display: flex;
     justify-content: space-between;

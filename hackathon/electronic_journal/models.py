@@ -60,8 +60,8 @@ class Quest(models.Model):
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
     file_link = models.FileField(upload_to='quest/%Y/%m/%d/', blank=True, null=True)
     date_added = models.DateField(auto_now_add=True, blank=True, verbose_name='Дата Добавления')
-    date_pass = models.DateField(blank=True, verbose_name='Дата сдачи')
-    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='URL', )
+    date_pass = models.DateField(auto_now_add=True, blank=True, verbose_name='Дата сдачи')
+    slug = AutoSlugField(populate_from='quest_name', unique=True, db_index=True, verbose_name='URL', )
 
     class Meta:
         verbose_name = 'Задание'

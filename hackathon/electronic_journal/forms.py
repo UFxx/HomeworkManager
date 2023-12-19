@@ -30,10 +30,21 @@ class UserRegistrationForm(UserCreationForm):
 
 
 
-class QuestForm(forms.ModelForm):
+class CreateQuestForm(forms.ModelForm):
+    quest_name = forms.CharField(label="",
+        widget=forms.Textarea(attrs={'placeholder' : 'Название задания', 'cols': 30, 'rows': 1}))
+    description = forms.CharField(label="",
+        widget=forms.Textarea(attrs={'placeholder' : 'Описание задания', 'cols': 30, 'rows': 5}))
+    file_link = forms.FileField(label="" )
+    group = forms.ModelChoiceField(queryset=Group.objects.all())
+    teacher = forms.ModelChoiceField(queryset=User.objects.all(),
+        widget=forms.Select(attrs={"class": 'lower_select'}))
+    subject = forms.ModelChoiceField(queryset=Subject.objects.all(),
+        widget=forms.Select(attrs={"class": 'max_lower_select'}))
+
     class Meta:
         model = Quest
-        fields = ['quest_name', 'subject', 'teacher', 'group', 'description', 'file_link', 'date_pass']
+        fields = ['quest_name', 'description', 'group', 'subject', 'file_link', 'teacher']
 
     def __init__(self, *args, **kwargs):
-        super(QuestForm, self).__init__(*args, **kwargs)
+        super(CreateQuestForm, self).__init__(*args, **kwargs)

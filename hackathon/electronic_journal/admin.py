@@ -19,7 +19,6 @@ class QuestAdmin(admin.ModelAdmin):
     list_display = ('id', 'quest_name', 'subject', 'teacher', 'group', 'description', 'date_added', 'date_pass')
     list_display_links = ('id', 'subject')
     search_fields = ('id', 'subject', 'description')
-    prepopulated_fields = {'slug': ('quest_name',)}
 
 
 class SubjectAdmin(admin.ModelAdmin):

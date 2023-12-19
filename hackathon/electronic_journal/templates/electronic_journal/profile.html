@@ -4,98 +4,140 @@
 <link rel="stylesheet" href="{% static 'electronic_journal/css/profile/profile.css' %}">
 <div class="content">
     <div class="top-content">
+
         <div class="student-info">
-            <div class="student-photo">
-                <div>
-                    <img src="assets/img/student-default-photo.png" alt="">
-                </div>
-                <input type="file" name="" id="change-photo">
-                <label for="change-photo">Изменить</label>
-            </div>
             <div class="student-characteristics">
-                <p class="characteristics-item student-name">Хадиков Георгий Сосланович</p>
-                <p class="characteristics-item student-birthday-date">28.03.2004</p>
+                <p class="characteristics-item student-name">{{ user_data.first_name}} {{ user_data.last_name}}</p>
+                <p class="characteristics-item student-birthday-date">{{ user.email }}</p>
                 <div>
-                    <p class="characteristics-item student-group">3-ИС</p>
+                    {% if user_data.role != 'student' %}
+                        <p class="characteristics-item student-group">Преподаватель</p>
+                    {% else %}
+                        <p class="characteristics-item student-group">{{ user_data.group.name}}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
+
+
+
+<!--        <div class="student-info">-->
+<!--            <div class="student-photo">-->
+<!--                <div>-->
+<!--                    <img src="assets/img/student-default-photo.png" alt="">-->
+<!--                </div>-->
+<!--                <input type="file" name="" id="change-photo">-->
+<!--                <label for="change-photo">Изменить</label>-->
+<!--            </div>-->
+<!--            <div class="student-characteristics">-->
+<!--                <p class="characteristics-item student-name"></p>-->
+<!--                <p class="characteristics-item student-birthday-date"></p>-->
+<!--                <div>-->
+<!--                    <p class="characteristics-item student-group"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <!-- forma dlya user_qwestov --->
+
         <div class="last-weeks-tasks">
             <p class="last-weeks-tasks-title">Последние задания</p>
-
                 <div class="last-weeks-tasks-content">
-                    {% for userquest in userquests %}
+                    {% for user_quest in user_quests %}
                     <a href="" class="last-weeks-tasks-item">
-                        <p class="last-weeks-tasks-item__teacher">{{ userquest.status} }</p>
+                        <p class="last-weeks-tasks-item__teacher">{{ user_quest.quest.quest_name }}</p>
                         <div>
-                            <p class="last-weeks-tasks-item__subject">{{ quest.subject }}</p>
-                            <p class="last-weeks-tasks-item__status task-done">Сдано</p>
+                            <p class="last-weeks-tasks-item__subject">{{ user_quest.subject }}</p>
+                            {% if user_quest.status %}
+                                <p class="last-weeks-tasks-item__status task-done">Сдано</p>
+                            {% else %}
+                                <p class="last-weeks-tasks-item__status task-failed">Не сдано</p>
+                            {% endif %}
                         </div>
                     </a>
                     {% endfor %}
-                    <a href="" class="last-weeks-tasks-item">
-                        <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>
-                        <div>
-                            <p class="last-weeks-tasks-item__subject">ПМ 01</p>
-                            <p class="last-weeks-tasks-item__status task-failed">Просрочено</p>
-                        </div>
-                    </a>
-                    <a href="" class="last-weeks-tasks-item"></a>
-                    <a href="" class="last-weeks-tasks-item"></a>
-                    <a href="" class="last-weeks-tasks-item"></a>
-                    <a href="" class="last-weeks-tasks-item"></a>
+<!--                    <a href="" class="last-weeks-tasks-item">-->
+<!--                        <p class="last-weeks-tasks-item__teacher">Гагиева В. Л.</p>-->
+<!--                        <div>-->
+<!--                            <p class="last-weeks-tasks-item__subject">ПМ 01</p>-->
+<!--                            <p class="last-weeks-tasks-item__status task-failed">Просрочено</p>-->
+<!--                        </div>-->
+<!--                    </a>-->
                 </div>
-
-
         </div>
     </div>
+
+
+    <!-- forma dlya quests -->
     <div class="failed-tasks">
         <p class="failed-tasks-title">Просроченные задания</p>
         <i class="fas fa-chevron-left"></i>
         <div class="failed-tasks-slider-line">
-            <div href="" class="failed-tasks-item">
-                <div>
-                    <p>Гагиева В.Л.</p>
-                    <p>ПМ 01</p>
+
+            {% for quest in quests %}
+                <div href="" class="failed-tasks-item">
+                        <p class="task-data">{{ quest.subject.subject_name}}</p>
+                        <p class="task-data">{{ quest.quest_name }}</p>
+                    <a href="">Посмотреть</a>
                 </div>
-                <p class="task-data">28.12.2023</p>
-                <p class="task-failed">Просрочено</p>
-                <a href="">Посмотреть</a>
-            </div>
-            <div href="" class="failed-tasks-item">
-                <div>
-                    <p>Гагиева В.Л.</p>
-                    <p>МДК 04.01</p>
-                </div>
-                <p class="task-data">28.12.2023</p>
-                <p class="task-failed">Просрочено</p>
-                <a href="">Посмотреть</a>
-            </div>
-            <div href="" class="failed-tasks-item"></div>
-            <div href="" class="failed-tasks-item"></div>
-            <div href="" class="failed-tasks-item"></div>
+            {% endfor %}
+
+
+<!--            <div href="" class="failed-tasks-item">-->
+<!--                <div>-->
+<!--                    <p>Гагиева В.Л.</p>-->
+<!--                    <p>МДК 04.01</p>-->
+<!--                </div>-->
+<!--                <p class="task-data">28.12.2023</p>-->
+<!--                <p class="task-failed">Просрочено</p>-->
+<!--                <a href="">Посмотреть</a>-->
+<!--            </div>-->
+<!--            <div href="" class="failed-tasks-item"></div>-->
+<!--            <div href="" class="failed-tasks-item"></div>-->
+<!--            <div href="" class="failed-tasks-item"></div>-->
         </div>
         <i class="fas fa-chevron-right"></i>
     </div>
+    {% if user_data.role != 'student' %}
     <!-- Форма для препода, когда он задания загружает -->
-    <div class="upload-task">
-        <textarea name="" id="" cols="30" rows="5" placeholder="Описание задания"></textarea>
-        <input type="file" name="" id="upload-task-input">
-        <label for="upload-task-input">Загрузить файл</label>
-        <select name="" id="">
-            <option value="">Группа</option>
-            <option value="">3-ИС</option>
-            <option value="">4-1-ИС</option>
-            <option value="">4-2-ИС</option>
-        </select>
-        <select name="" class="lower_select">
-            <option value="">Предмет</option>
-            <option value="">ПМ 01</option>
-            <option value="">ПМ 02</option>
-            <option value="">ПМ 03</option>
-        </select>
-        <button>Отправить</button>
-    </div>
+    <form method="post" enctype="multipart/form-data" action="">
+        <div class="upload-task">
+            {% csrf_token %}
+            {{ form.quest_name }}
+            {{ form.description }}
+            {{ form.file_link }}
+            {{ form.group }}
+            {{ form.subject }}
+            {{ form.teacher }}
+            {{ form.date_pass}}
+<!--            <textarea name="" id="" cols="30" rows="1" placeholder="Название задания"></textarea>-->
+<!--            <textarea name="" id="" cols="30" rows="5" placeholder="Описание задания"></textarea>-->
+<!--            <input type="file" name="" id="upload-task-input">-->
+<!--            <label for="upload-task-input">Загрузить файл</label>-->
+<!--            <select name="" id="">-->
+<!--                <option value="">Группа</option>-->
+<!--                <option value="">3-ИС</option>-->
+<!--                <option value="">4-1-ИС</option>-->
+<!--                <option value="">4-2-ИС</option>-->
+<!--            </select>-->
+<!--            <select name="" class="lower_select">-->
+<!--                <option value="">Предмет</option>-->
+<!--                <option value="">ПМ 01</option>-->
+<!--                <option value="">ПМ 02</option>-->
+<!--                <option value="">ПМ 03</option>-->
+<!--            </select>-->
+            <button type="submit">Отправить</button>
+        </div>
+    {% endif %}
+        {% if errors %}
+        <ul class="errorlist">
+            {% for field, error_list in errors.items %}
+                {% for error in error_list %}
+                    <li>{{ field }}: {{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
 </div>
 
 <script src="{% static 'electronic_journal/js/profile/failedTasksSlider.js' %}"></script>
