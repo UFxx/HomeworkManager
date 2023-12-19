@@ -33,7 +33,6 @@ class UserQuestAdmin(admin.ModelAdmin):
     list_display = ('id', 'status', 'quest', 'user', 'comment', 'date_added')
     list_display_links = ('id', 'user')
     search_fields = ('id', 'quest')
-    # prepopulated_fields = {'slug': ('user', 'quest')}
 
 
 admin.site.register(Group, GroupAdmin)
