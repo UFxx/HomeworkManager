@@ -8,4 +8,5 @@ urlpatterns = [
     path('profile/', Profile.as_view(), name='profile'),
     path('quest/', QuestView.as_view(), name='quest'),
     path('verify/<str:email>/<uuid:code>/', EmailVerificationView.as_view(), name='email_verification'),
+    path('logout/', logout_user, name='logout'),
 ]

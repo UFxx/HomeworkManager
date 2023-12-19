@@ -1,6 +1,7 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, logout
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, ListView, TemplateView
 
@@ -14,6 +15,11 @@ class Login(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('profile')  # указать профиль
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
 
 
 class UserRegistrationView(CreateView):
@@ -49,7 +55,7 @@ class QuestView(ListView):
 
 
 class EmailVerificationView(TemplateView):
-    template_name = 'email_verification.html'
+    template_name = 'electronic_journal/email_verification.html'
 
     def get(self, request, *args, **kwargs):
         code = kwargs['code']
@@ -60,4 +66,4 @@ class EmailVerificationView(TemplateView):
             user.save()
             return super(EmailVerificationView, self).get(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse('profile'))
+            return HttpResponseRedirect(reverse('login'))
