@@ -11,6 +11,10 @@ body {
     padding: 30px 50px;
 }
 
+.lower_select{
+    top: 70px;
+}
+
 .top-content {
     display: flex;
     justify-content: space-between;

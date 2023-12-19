@@ -40,6 +40,6 @@ class Profile(ListView):
         return context
 
 
-class Quest(ListView):
+class QuestView(ListView):
     model = UserQuest
     template_name = 'electronic_journal/tasks.html'
