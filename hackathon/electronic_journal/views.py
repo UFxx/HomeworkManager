@@ -41,5 +41,6 @@ class Profile(ListView):
 
 
 class QuestView(ListView):
-    model = UserQuest
-    template_name = 'electronic_journal/tasks.html'
+    model = Quest
+    template_name = 'electronic_journal/Quest.html'
+    context_object_name = 'quests'
