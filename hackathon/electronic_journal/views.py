@@ -18,7 +18,6 @@ class Login(LoginView):
 
 
 class UserRegistrationView(CreateView):
-
     """Регистрация"""
     model = get_user_model()
     form_class = UserRegistrationForm
@@ -26,6 +25,7 @@ class UserRegistrationView(CreateView):
 
     def get_success_url(self):
         return reverse_lazy('login')
+
 
 class Profile(ListView):
     models = User
@@ -48,3 +48,8 @@ class Profile(ListView):
         # здесь пропустил букву                \/
         context['userquest'] = UserQuest.objects.filter(user=self.request.user)
         return context
+
+
+class Quest(ListView):
+    model = UserQuest
+    template_name = 'electronic_journal/tasks.html'

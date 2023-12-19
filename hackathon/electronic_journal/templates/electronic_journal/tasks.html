@@ -1,0 +1,69 @@
+{% extends 'electronic_journal/base.html'%}
+{% load static%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'electronic_journal/css/tasks/tasks.css' %}">
+<main>
+    <div class="task task-close">
+        <p class="teacher-name">Гагиева В. Л.</p>
+        <p class="subject">ПМ 01</p>
+        <!-- Дата, когда задание загружено -->
+        <p class="task-date">28.12.2023</p>
+        <div class="expand">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="task-opened">
+            <div class="task-description">
+                <p>Описание и анализ основных принципов устройства и организации веб-сервисов. Создание демонстрационного клиент-серверного приложения.</p>
+            </div>
+            <div class="task-options">
+                <i class="fas fa-file-download"></i>
+                <i class="fas fa-file-upload"></i>
+            </div>
+            <p class="task-done">Сдано</p>
+        </div>
+    </div>
+
+    <div class="task task-close">
+        <p class="teacher-name">Караев Ч. А.</p>
+        <p class="subject">ПМ 04</p>
+        <!-- Дата, когда задание загружено -->
+        <p class="task-date">29.12.2023</p>
+        <div class="expand">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="task-opened">
+            <div class="task-description">
+                <p>Сделать серию из 12 побед в шахматах и создать нейросеть. Написать и вовремя сдать отчеты. И чтобы мемы были.</p>
+            </div>
+            <div class="task-options">
+                <i class="fas fa-file-download"></i>
+                <i class="fas fa-file-upload"></i>
+            </div>
+            <p class="task-failed">Просрочено</p>
+        </div>
+    </div>
+
+    <div class="task task-close">
+        <p class="teacher-name">Зембатов В. Л.</p>
+        <p class="subject">ПМ 02</p>
+        <!-- Дата, когда задание загружено -->
+        <p class="task-date">01.01.2024 </p>
+        <div class="expand">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="task-opened">
+            <div class="task-description">
+                <p>В сетевой папке открыть практические и сделать до 12 числа</p>
+            </div>
+            <div class="task-options">
+                <i class="fas fa-file-download"></i>
+                <i class="fas fa-file-upload"></i>
+            </div>
+            <p class="task-failed">Просрочено</p>
+        </div>
+    </div>
+</main>
+
+    <script src="{% static 'electronic_journal//js/tasks/tasks.js' %}"></script>
+{% endblock %}
+</html>
