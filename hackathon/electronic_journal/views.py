@@ -1,10 +1,12 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, logout
 from django.contrib.auth.views import LoginView
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView
 
 from .forms import LoginForm, UserRegistrationForm
 from .models import Quest, UserQuest, User
+
 
 class Login(LoginView):
     form_class = LoginForm
@@ -44,3 +46,8 @@ class QuestView(ListView):
     model = Quest
     template_name = 'electronic_journal/Quest.html'
     context_object_name = 'quests'
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
