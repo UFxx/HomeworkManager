@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import (Group, Subject, Quest, UserQuest, User)
+from .models import (Group, Subject, Quest, UserQuest, User, EmailVerification)
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'last_login', 'username', 'email', 'phone', 'role')
+    list_display = ('id', 'last_login', 'username', 'email', 'phone', 'role', 'verification')
     list_display_links = ('id', 'last_login', 'username', 'email', 'phone')
     search_fields = ('id', 'username', 'phone', 'email')
 
@@ -32,7 +32,12 @@ class UserQuestAdmin(admin.ModelAdmin):
     list_display = ('id', 'status', 'quest', 'user', 'comment', 'date_added')
     list_display_links = ('id', 'user')
     search_fields = ('id', 'quest')
-    # prepopulated_fields = {'slug': ('user', 'quest')}
+
+
+class EmailVerificationAdmin(admin.ModelAdmin):
+    list_display = ('code', 'user', 'expiration')
+    fields = ('code', 'user', 'expiration', 'created')
+    readonly_fields = ('created',)
 
 
 admin.site.register(Group, GroupAdmin)
@@ -40,3 +45,4 @@ admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Quest, QuestAdmin)
 admin.site.register(UserQuest, UserQuestAdmin)
 admin.site.register(User, UserAdmin)
+admin.site.register(EmailVerification, EmailVerificationAdmin)

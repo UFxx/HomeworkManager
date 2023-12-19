@@ -1,12 +1,12 @@
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Electron Admin",
+    "site_title": "Electronic journal Admin",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Electron",
+    "site_header": "Electronic journal",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Electron",
+    "site_brand": "Electronic journal",
 
     # # Logo to use for your site, must be present in static files, used for brand on top left
     # "site_logo": "books/img/logo.png",
@@ -24,7 +24,7 @@ JAZZMIN_SETTINGS = {
     # "site_icon": None,
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the Electron",
+    "welcome_sign": "Welcome to the Electronic journal",
 
     # # Copyright on the footer
     # "copyright": "Acme Library Ltd",
@@ -48,10 +48,10 @@ JAZZMIN_SETTINGS = {
 
         # external url that opens in a new window (Permissions can be added)
         {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"name": "Доп функции", "url": "additional_admin_features", "new_window": True},
-        {"name": 'Flower' , "url": 'http://127.0.0.1:5555/',"new_window": True },
+
+
         # model admin to link to (Permissions checked against model)
-        {"model": "electronic_journal.Users"},
+        {"model": "electronic_journal.User"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
         {"app": "shop"},
@@ -64,7 +64,7 @@ JAZZMIN_SETTINGS = {
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
         {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"model": "electronic_journal.Users"},
+        {"model": "electronic_journal.User"},
         {"name": "Additional_functions", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True}
     ],
 
@@ -138,7 +138,7 @@ JAZZMIN_SETTINGS = {
     # - carousel
     "changeform_format": "horizontal_tabs",
     # override change forms on a per modeladmin basis
-    "changeform_format_overrides": {"electronic_journal.Users": "collapsible", "auth.group": "vertical_tabs"},
+    "changeform_format_overrides": {"electronic_journal.User": "collapsible", "auth.group": "vertical_tabs"},
     # # Add a language dropdown into the admin
     # "language_chooser": True,
 }

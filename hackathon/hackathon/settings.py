@@ -31,6 +31,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+DOMAIN_NAME = 'http://127.0.0.1:8000'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -141,4 +144,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 AUTH_USER_MODEL = 'electronic_journal.User'
+
+
+# подключение почты
+EMAIL_HOST = 'smtp.yandex.com'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+EMAIL_HOST_USER = 'st0re-server-shop@yandex.ru'
+EMAIL_HOST_PASSWORD = 'tmqfcxljkjpslqhs'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

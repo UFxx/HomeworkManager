@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.db.models import Prefetch
 from django.shortcuts import render
@@ -8,13 +7,21 @@ from django.views.generic import CreateView, ListView
 
 from .forms import LoginForm, UserRegistrationForm, CreateQuestForm
 from .models import Quest, UserQuest, User
+from .forms import LoginForm, UserRegistrationForm
+from .models import Quest, UserQuest, User, EmailVerification
+
 
 class Login(LoginView):
     form_class = LoginForm
     template_name = 'electronic_journal/login.html'
 
     def get_success_url(self):
-        return reverse_lazy('login')  # указать профиль
+        return reverse_lazy('profile')  # указать профиль
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
 
 
 class UserRegistrationView(CreateView):
@@ -56,5 +63,21 @@ class Profile(LoginRequiredMixin, CreateView):
 #         return render(request, self.template_name, {'form': form})
 
 class QuestView(ListView):
-    model = UserQuest
-    template_name = 'electronic_journal/tasks.html'
+    model = Quest
+    template_name = 'electronic_journal/Quest.html'
+    context_object_name = 'quests'
+
+
+class EmailVerificationView(TemplateView):
+    template_name = 'electronic_journal/email_verification.html'
+
+    def get(self, request, *args, **kwargs):
+        code = kwargs['code']
+        user = User.objects.get(email=kwargs['email'])
+        email_verifications = EmailVerification.objects.filter(user=user, code=code)
+        if email_verifications.exists() and not email_verifications.first().is_expired():
+            user.verification = True
+            user.save()
+            return super(EmailVerificationView, self).get(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect(reverse('login'))
