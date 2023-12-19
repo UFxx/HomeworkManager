@@ -35,8 +35,8 @@ class Profile(ListView):
         context = super().get_context_data(**kwargs)
 
         context['user_data'] = self.get_queryset()
-        context['quest'] = Quest.objects.filter(group=self.request.user.group)
-        context['userquest'] = UserQuest.objects.filter(user=self.request.user)
+        context['quests'] = Quest.objects.filter(group=self.request.user.group)[:5]
+        context['userquests'] = UserQuest.objects.filter(user=self.request.user)
         return context
 
 
